@@ -1,39 +1,55 @@
 @url: 'https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic';
 
-@link-color: #f6a03a;
-@link-color-hover: lighten(@link-color, 50%);
+@main-color: #bb8000;
+@second-color: #aa4329;
+@third-color: #123456;
+
+@size1: 14px;
+@size2: @size1*1.5; 
+
+.mixin {
+	border-radius: 25%;
+	border: 1px solid @main-color;
+}
 
 body {
-    -webkit-font-smoothing: antialiased;
-    line-height: 32px;
-    font-size: 20px;
-    color: #454054;
-    font-weight: 300;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-section, header, footer, main, article, nav, aside { position: relative; }
-a {
-    outline: none !important;
-    text-decoration: none !important;
-    color: @link-color;
-    transition: all 225ms ease;
 
-    &a:hover,
-    &a:focus {
-        color: @link-color-hover;
-    }
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	background-color: @main-color;
+	h1 {
+		font-size: @size2;
+	}
 }
-p { margin-bottom: 18px; }
-h1, .h1 {
-    font-size: 50px;
-    text-align: center;
-    font-weight: 300;
-}
-h2, .h2 {
 
+article {
+	height: 500px;
+	background-color: @third-color;
+	hr {
+		width: 90%;
+		border: 1px solid @second-color;
+	}
+	section {
+		height: 50px;
+		width: 50px;
+		.mixin()
+	}
 }
-h3, .h3 {
 
-}
-h4, .h4 {
-
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: @second-color;
+	h2 {
+		font-size: @size1;
+		color: @third-color;
+	}
 }
